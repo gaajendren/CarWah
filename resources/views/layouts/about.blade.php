@@ -2,7 +2,7 @@
 <div class="about-section">
             <div class="column-img">
                 <div class="card">
-                    <img src="/public/img/car.jpeg" alt="">
+                    <img src="{{ asset('img/car.jpeg')}}" alt="">
                 </div>
             </div>
             <div class="column-text">

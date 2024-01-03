@@ -9,11 +9,11 @@
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="..public/lib/flaticon/font/flaticon.css" rel="stylesheet">
-    <link href="../public/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="../public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../public/css/style.css" rel="stylesheet">
-    <link  href="/../public/css/styles.css" rel="stylesheet" >
+    <link href="{{ asset('lib/flaticon/font/flaticon.css')}}" rel="stylesheet">
+    <link href="{{ asset('lib/animate/animate.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+    <link  href="{{ asset('css/styles.css')}}" rel="stylesheet" >
 
 
     <title>About Page</title>
@@ -101,6 +101,9 @@
             }
         });
     }
+
+
+
 </script>
 
 

@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/about', [LayoutController::class, 'about'])->name('about');
     Route::get('/service', [LayoutController::class, 'service'])->name('service');
+    Route::get('/booking', [BookingController::class , 'index'])->name('booking');
     Route::get('/get/{id}', [LayoutController::class , 'getProductsByVehicle']);
 });
 

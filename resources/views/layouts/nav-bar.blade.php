@@ -12,6 +12,7 @@
                             <a href="/about" class="nav-item nav-link">About</a>
                             <a href="/service" class="nav-item nav-link">Service</a>
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="/booking" class="nav-item nav-link">Booking</a>
                         </div>
                         <div class="ml-auto">
                             <a class="btn btn-custom" id="btn" href="#">Get Appointment</a>

@@ -8,13 +8,12 @@ use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+ 
     public function index()
     {
-      
-    
+        $id = auth()->user()->id;
+        $data = Booking::where('user_id', $id)->get();
+        return view('booking_list', compact('data'));
     }
 
     
@@ -48,12 +47,12 @@ class BookingController extends Controller
         foreach ($allTimeSlots as $startTime) {
             $endTime = Carbon::parse($startTime)->addHours($slotDuration)->format('H:i');
     
-            // Count the bookings for the current slot
+         
             $bookingsInSlot = array_filter($bookedSlots, function ($slot) use ($startTime, $endTime) {
                 return $slot > $startTime && $slot <= $endTime;
             });
     
-            // Check if the current slot has reached its maximum bookings
+          
             if (count($bookingsInSlot) < $maxBookingsPerSlot) {
                 $availableTimeSlots[] = $startTime;
             }
@@ -63,9 +62,7 @@ class BookingController extends Controller
     }
     
 
-    /**
-     * Store a newly created resource in storage.
-     */
+   
     public function store(Request $request , string $id)
     {
         $input = $request->all();
@@ -75,35 +72,28 @@ class BookingController extends Controller
         return redirect('dashboard')->with('flash_message', 'Booking Succeefull!');  
     }
 
-    /**
-     * Display the specified resource.
-     */
+   
+
     public function show(Booking $booking)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+   
     public function edit(Booking $booking)
     {
-        //
+       
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+  
     public function update(Request $request, Booking $booking)
     {
-        //
+        
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+   
     public function destroy(Booking $booking)
     {
-        //
+        
     }
 }

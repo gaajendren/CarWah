@@ -9,11 +9,11 @@
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="..public/lib/flaticon/font/flaticon.css" rel="stylesheet">
-    <link href="../public/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="../public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../public/css/style.css" rel="stylesheet">
-    <link  href="/../public/css/styles.css" rel="stylesheet" >
+    <link href="{{ asset('lib/flaticon/font/flaticon.css')}}" rel="stylesheet">
+    <link href="{{ asset('lib/animate/animate.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+    <link  href="{{ asset('css/styles.css')}}" rel="stylesheet" >
 
 
     <title>Home Page</title>
@@ -26,7 +26,7 @@
         <div class="slideshow-container">
             
             <div class="mySlides">
-                <img src="/../public/img/image1.jpg" alt="Slide 1">
+                <img src="{{ asset('img/image1.jpg')}}" alt="Slide 1">
                 <div class="img_dtls">
                     <p>WASHING @ DETAILING</p>
                     <h1>Keep Your Car Newer</h1>
@@ -36,7 +36,7 @@
 
            
             <div class="mySlides">
-                <img src="/../public/img/image2.jpg" alt="Slide 2">
+                <img src="{{ asset('img/image2.jpg')}}" alt="Slide 2">
                 <div class="img_dtls">
                     <p>WASHING @ DETAILING</p>
                     <h1>Quality Service For You</h1>
@@ -46,7 +46,7 @@
 
 
             <div class="mySlides">
-                <img src="/../public/img/image3.png" alt="Slide 3">
+                <img src="{{ asset('img/image3.png')}}" alt="Slide 3">
                 <div class="img_dtls">
                     <p>WASHING @ DETAILING</p>
                     <h1>Exterior & Interior Washing</h1>

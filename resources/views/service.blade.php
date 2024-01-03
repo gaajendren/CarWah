@@ -9,12 +9,11 @@
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="..public/lib/flaticon/font/flaticon.css" rel="stylesheet">
-    <link href="../public/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="../public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../public/css/style.css" rel="stylesheet">
-    <link  href="/../public/css/styles.css" rel="stylesheet" >
-
+    <link href="{{ asset('lib/flaticon/font/flaticon.css')}}" rel="stylesheet">
+    <link href="{{ asset('lib/animate/animate.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+    <link  href="{{ asset('css/styles.css')}}" rel="stylesheet" >
 
     <title>About Page</title>
 </head>
@@ -69,6 +68,15 @@
                                 <div class="price-body mt-0">
                                     <label for="">Product Details</label>
                                     <p style="text-indent:-8px;"> {{$val->description}}</p>
+                                    
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Launch demo modal
+                                    </button>
+
+                                    <div class="modal-dialog modal-fullscreen-sm-down">
+                                    ...
+                                    </div>
+
                                     <label for="">Service Provided</label>
                                     <ul>
                                         @php
@@ -115,7 +123,14 @@
    
 
 
+<script>
+    const myModal = document.getElementById('myModal')
+    const myInput = document.getElementById('myInput')
 
+    myModal.addEventListener('shown.bs.modal', () => {
+    myInput.focus()
+    })
+</script>
 
 </body>
 </html>
