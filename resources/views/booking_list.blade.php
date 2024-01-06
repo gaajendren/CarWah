@@ -15,6 +15,46 @@
     <link href="{{ asset('css/style.css')}}" rel="stylesheet">
     <link  href="{{ asset('css/styles.css')}}" rel="stylesheet" >
 
+    <style>
+                        .rating {
+                display: inline-flex;
+                    margin-top: -10px;
+                    flex-direction: row-reverse;
+                
+                    
+                }
+
+                .rating>input {
+                    display: none
+                }
+
+                .rating>label {
+                    position: relative;
+                    width: 28px;
+                    font-size: 35px;
+                    color: #ff0000;
+                    cursor: pointer;
+                }
+
+                .rating>label::before {
+                    content: "\2605";
+                    position: absolute;
+                    opacity: 0
+                }
+
+                .rating>label:hover:before,
+                .rating>label:hover~label:before {
+                    opacity: 1 !important
+                }
+
+                .rating>input:checked~label:before {
+                    opacity: 1
+                }
+
+                .rating:hover>input:checked~label:before {
+                    opacity: 0.4
+                }
+    </style>
 
     <title>Booking list Page</title>
 </head>
@@ -47,17 +87,31 @@
                     <p class="card-text">Time: {{ $formattedTime }}</p>
 
                     @if ($val->status == 'Pending')
-                        <div class="badge badge-info">Pending</div>
+                        <div class="badge badge-info p-2">Pending</div>
                         @elseif ($val->status == 'Received')
-                        <div class="badge badge-primary">Received</div> 
+                        <div class="badge badge-primary p-2">Received</div> 
                         @elseif ($val->status == 'On the Process')
-                        <div class="badge badge-warning">On the Process</div>
+                        <div class="badge badge-warning p-2">On the Process</div>
                         @elseif ($val->status == 'Settle')
-                        <div class="badge badge-success">Settle</div>
+                        <div class="badge badge-success p-2">Settle</div>
                         @elseif ($val->status == 'Rejected')
-                        <div class="badge badge-danger">Rejected</div>
+                        <div class="badge badge-danger p-2">Rejected</div>
                     @endif
-                    
+
+                    <div class="mb-1 mt-3 ml-0">
+                    @php
+                        $isBook = $review->where('booking_id', $val->id)->first();
+
+                        if(!$isBook) {
+                            if($val->status == 'Settle') {
+                    @endphp
+                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Comment</button>
+                                @include ('layouts.comment')
+                    @php
+                            }
+                        }
+                    @endphp
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,5 +125,23 @@
         
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
    
+    <script>
+        const exampleModal = document.getElementById('exampleModal')
+if (exampleModal) {
+  exampleModal.addEventListener('show.bs.modal', event => {
+    // Button that triggered the modal
+    const button = event.relatedTarget
+    // Extract info from data-bs-* attributes
+    const recipient = button.getAttribute('data-bs-whatever')
+    // If necessary, you could initiate an Ajax request here
+    // and then do the updating in a callback.
+
+    // Update the modal's content.
+    const modalTitle = exampleModal.querySelector('.modal-title')
+    const modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+  })
+}
+    </script>
 </body>
 </html>

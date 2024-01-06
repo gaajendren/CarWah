@@ -32,7 +32,7 @@
             {!! csrf_field() !!}
             <div class="form-group">
                 <label for="preferredDate">Preferred Date:</label>
-                <input type="date" class="form-control" id="preferredDate" name="date" onchange="updateTimeSlots()">
+                <input type="date" min="{{ date('Y-m-d') }}"  max="{{ date('Y-m-d', strtotime('+1 month')) }}" class="form-control" id="preferredDate" name="date" onchange="updateTimeSlots()">
             </div>
 
             <div class="form-group">

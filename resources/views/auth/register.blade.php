@@ -1,52 +1,81 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+<link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+<script src="https://kit.fontawesome.com/ff3606fe13.js" crossorigin="anonymous"></script>
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/style1.css">
+<style>
+    .red{
+        color: red;
+    }
+</style>
+</head>
+<body>
+
+
+
+    <!-- Sign up form -->
+    <section class="signup" style="padding: 70px 20px">
+        <div class="container" style="font-family:verdana;">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 style="font-family:verdana" class="form-title">Register</h2>
+                    <form method="POST" action="{{ route('register') }}" class="register-form" >
+                    @csrf
+                        <div class="form-group">
+                            <label for="name"></label>
+                            <input style="font-family:verdana" type="text"  id="name" placeholder="Your Name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            <x-input-error :messages="$errors->get('name')" class="mt-2 red" />
+                        </div>
+                        <div style ="line-height: 180% "></div>
+
+                        <div class="form-group">
+                            <label for="email"></label>
+                            <input style="font-family:verdana" type="email" id="email" placeholder="Your Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <x-input-error :messages="$errors->get('email')" class="mt-2 red" />
+                        </div>
+
+                        
+                        <div class="form-group">
+                            
+                        <label for="password" class=""></label>
+                            
+                             
+                            
+                                <input  style=" width: 270px; font-family:verdana;" id="password" type="password" placeholder= "Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                <x-input-error :messages="$errors->get('password')" class="mt-2 red"  />
+                           
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end"></label>
+
+                            <div class="col-md-6">
+                                <input  style=" width: 270px; font-family:verdana;" id="password-confirm" type="password" placeholder= "Password Confirmation" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+                         
+                       
+                        <div class="form-group form-button">
+                            <button type="submit" class="form-submit" style="border:none;"  class="form-group form-button">Register</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="img/signup-image.jpg" alt="sing up image"></figure>
+                    <a href="/login" class="signup-image-link">I am already member</a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+</div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+<!-- JS -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>

@@ -12,6 +12,7 @@ class Booking extends Model
     'user_id',
     'product_id',
     'date',
+    'duration',
     'time',
     'fullname',
     'email',

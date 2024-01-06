@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\VechicleController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
@@ -58,6 +59,8 @@ Route::post('/admin/vechicle/store', [VechicleController::class, 'store'])->name
 Route::get('/admin/order', [OrderController::class, 'index'])->name('index.order');
 Route::get('/admin/order/edit/{id}', [OrderController::class, 'edit'])->name('edit.order');
 Route::patch('admin/order/update/{id}', [OrderController::class, 'update'])->name('update.order');
+
+Route::post('/comment/{id}/{book}', [ReviewController::class, 'store'])->name('comment.craete');
 
 
 
