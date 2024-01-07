@@ -77,6 +77,7 @@
                                             <th>Service Image</th>
                                             <th>Service Name</th>                                       
                                             <th>Price</th>
+                                            <th>Vehicle Type</th>
                                             <th>Duration</th>
                                             <th>Availabilty</th>
                                             <th>Action</th>
@@ -86,6 +87,7 @@
 
                                       @foreach ($product as $data)
                                         <tr>
+                             
                                             <td>
                                                 <div class="d-flex align-items-center justify-content-center">
                                                     <div class="avatar me-2" ><img width="180px" height="130px" style="background-fit:cover" class="avatar-img" src="{{ asset('storage/' . $data->img) }}" />   
@@ -95,6 +97,7 @@
                                             </td>
                                             <td>{{ $data->name }}</td>
                                             <td>{{ $data->price }}</td>
+                                            <td>{{ $data->vechicles->name }}</td>
                                             <td>@if( $data->duration == '')
                                                 {{ $data->duration_es }}
                                                 @else
@@ -109,9 +112,16 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark  p-0"><i class="fa-solid fa-trash-can fa-sm"></i></a>
+                                            <form method="POST" action="{{ url('/product/delete' . '/' . $data->id) }}" style="display:inline;" accept-charset="UTF-8" >
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-datatable btn-icon btn-transparent-dark p-0" onclick="return confirm(&quot;Confirm delete?&quot;)">
+                                               <i class="fa-solid fa-trash-can fa-sm"></i>
+                                                </button>
+                                            </form>
+                                               
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark p-1" href="{{ url('/admin/edit/' . $data->id) }}"><i class="fa-solid fa-pen-to-square fa-sm"></i></a>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark p-0" href =""><i class="fa-solid fa-eye fa-sm"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark p-0" href ="{{ url('/admin/show/' . $data->id) }}"><i class="fa-solid fa-eye fa-sm"></i></a>
                                                
                                             
                                          </td>

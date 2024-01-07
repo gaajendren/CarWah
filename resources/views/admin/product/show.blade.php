@@ -1,5 +1,3 @@
-<?php include '../admin_sesion.php'?>
-<?php include 'controllers.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +35,7 @@
     <div id="wrapper">
 
      
-      <?php include '../sidebar.php' ?>
+      @include ('admin.sidebar')
         
 
         <!-- Content Wrapper -->
@@ -46,7 +44,7 @@
             <!-- Main Content -->
             <div id="content">
 
-            <?php include '../top_bar.php' ?>
+            @include ('admin.top_bar')
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -54,29 +52,42 @@
     <div class="col-xl-12">  
         <div class="card mb-4">
             <div class="card-header d-flex w-100 align-items-center justify-content-between">Product Details
-            <a href="<?php echo $list_product ?>"><button class="btn btn-primary d-flex ">Back</button></a>
+            <a href="{{route('index')}}"><button class="btn btn-primary d-flex ">Back</button></a>
             </div>
-                <?php $data = show($_GET['id']) ?>
+                
                 <div class="card-body">
                   
                     <div class="col-xl-10">
                               
-                                <img src="<?php echo $product_image . $data['img'] ?>" alt="Previous Image" class="" style="max-width: 200px;">
+                                <img src="{{ asset('storage/' . $data->img) }}" alt="Previous Image" class="" style="max-width: 200px;">
    
                                 <hr class="h-15" style="height: 5px;">
                                 <label for="">Details</label>
                                 <hr style="height: 5px;">
-                        <div class="mt-4 mb-3"><label for="exampleFormControlInput1">Product Name: <?php echo $data['prd_name'] ?></label></div>
-                        <div class="mb-3"><label for="exampleFormControlInput2">Product Price: <?php echo $data['prd_price'] ?></label></div>
-                        <div class="mb-3"><label for="exampleFormControlInput3">Quantity: <?php echo $data['prd_quantity'] ?></label></div>
-                               
-                        <div class="mb-3">
-                        <label for="exampleFormControlInput5">Resolution: <?php echo $data['brand']; ?> </label>
-                    
+                        <div class="mt-4 mb-3"><label for="exampleFormControlInput1">Product Name: {{$data->name}}</label></div>
+                        <div class="mb-3"><label for="exampleFormControlInput2">Product Price: {{$data->price}}</label></div>
+
+
+                        <div class="mb-3"><label for="exampleFormControlInput5">Description: {{$data->description}}</label></div>
+                        <div class="mb-3"><label for="exampleFormControlInput5">Service Details: </label>   
+                            
+                    @php
+                    $details = [];                                     
+                    $details = explode("/n" ,$data->service)                                    
+                    @endphp
+
+                    @foreach ($details as $v)
+                    <div class="row ml-4">
+                        <div class="col-1 p-0">
+                        <i  class="far fa-check-circle"></i>
                         </div>
-                        <div class="mb-3"><label for="exampleFormControlInput5">Resolution: <?php echo $data['resolution'] ?></label></div>
-                        <div class="mb-3"><label for="exampleFormControlInput4">Availability: <?php echo $data['warranthy'] ?></label></div>
-                        <div class="mb-0"><label for="exampleFormControlTextarea1">Description: <?php echo $data['description'] ?></label></div>       
+                        <div class="col-11 p-0">
+                            <p style="text-indent: 0px; ">{{$v}}</p>
+                        </div>
+                    </div>
+                    
+                    @endforeach   </div>
+                        
                        
                    
                 </div>
@@ -118,7 +129,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-warning"  href="logout.php">Logout</a>
+                    <a class="btn btn-warning"  href="{{asset('logout')}}">Logout</a>
                 </div>
             </div>
         </div>

@@ -91,7 +91,14 @@
 
                                       @foreach ($product as $data )
                                         <tr>
-                                           
+                                           @php 
+                                           if($data->products == ""){
+                                            continue;
+                                           }
+                                           if($data->products->vechicles->name  == ""){
+                                            continue;
+                                           }
+                                           @endphp
                                             <td>{{ $data->fullname }}</td>   
                                             <td>{{ $data->contact }}</td>  
                                             
@@ -113,9 +120,15 @@
                                                 @endif
                                             </td>                                      
                                             <td>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark  p-0"><i class="fa-solid fa-trash-can fa-sm"></i></a>
+                                            <form method="POST" action="{{ url('/book_order/delete' . '/' . $data->id) }}" style="display:inline;" accept-charset="UTF-8" >
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-datatable btn-icon btn-transparent-dark p-0" onclick="return confirm(&quot;Confirm delete?&quot;)">
+                                               <i class="fa-solid fa-trash-can fa-sm"></i>
+                                                </button>
+                                            </form>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark p-1" href="{{ url('/admin/order/edit/' . $data->id) }}"><i class="fa-solid fa-pen-to-square fa-sm"></i></a>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark p-0" href =""><i class="fa-solid fa-eye fa-sm"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark p-0" href="{{ url('/admin/order/show/' . $data->id) }}"><i class="fa-solid fa-eye fa-sm"></i></a>
                                          </td>
                                         </tr>
                                   

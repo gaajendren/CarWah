@@ -30,7 +30,7 @@
                 <div class="img_dtls">
                     <p>WASHING @ DETAILING</p>
                     <h1>Keep Your Car Newer</h1>
-                    <a for="btn1" href=""></a><button id="btn1">Explore More</button></a>
+                    <a for="btn1" href="{{route('service')}}"><button id="btn1">Explore More</button></a>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
                 <div class="img_dtls">
                     <p>WASHING @ DETAILING</p>
                     <h1>Quality Service For You</h1>
-                    <a for="btn1" href=""></a><button id="btn1">Explore More</button></a>
+                    <a for="btn1" href="{{route('service')}}"><button id="btn1">Explore More</button></a>
                 </div>
             </div>
 
@@ -50,7 +50,7 @@
                 <div class="img_dtls">
                     <p>WASHING @ DETAILING</p>
                     <h1>Exterior & Interior Washing</h1>
-                    <a for="btn1" href=""></a><button id="btn1">Explore More</button></a>
+                    <a for="btn1" href="{{route('service')}}"><button id="btn1">Explore More</button></a>
                 </div>
             </div>
 
@@ -64,7 +64,7 @@
         <div class="price">
             <div class="container">
                 <div class="section-header text-center">
-                    <p>Washing Plan</p>
+                    <p>Washing Plan For Car</p>
                     <h2>Choose Your Plan</h2>
                 </div>
                 <div class="row">
@@ -72,7 +72,7 @@
                         <div  id="default" class="price-item">
                             <div class="price-header">
                                 <h3>Basic Cleaning</h3>
-                                <h2><span>$</span><strong>25</strong><span>.99</span></h2>
+                                <h2><span>RM</span><strong>25</strong><span>.99</span></h2>
                             </div>
                             <div class="price-body">
                                 <ul>
@@ -92,7 +92,7 @@
                         <div id="default" class="price-item featured-item">
                             <div class="price-header">
                                 <h3>Premium Cleaning</h3>
-                                <h2><span>$</span><strong>35</strong><span>.99</span></h2>
+                                <h2><span>RM</span><strong>35</strong><span>.99</span></h2>
                             </div>
                             <div class="price-body">
                                 <ul>
@@ -112,7 +112,7 @@
                         <div  id="default" class="price-item">
                             <div class="price-header">
                                 <h3>Complex Cleaning</h3>
-                                <h2><span>$</span><strong>49</strong><span>.99</span></h2>
+                                <h2><span>RM</span><strong>49</strong><span>.99</span></h2>
                             </div>
                             <div class="price-body">
                                 <ul>

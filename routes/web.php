@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\Logout;
 use App\Http\Controllers\VechicleController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProductController;
@@ -24,6 +25,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 Route::get('/admin/index', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.index');
 
@@ -40,6 +42,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/admin/product', [ProductController::class, 'index'])->name('index');
 Route::get('/admin/create', [ProductController::class, 'create'])->name('create');
 Route::get('/admin/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+Route::get('/admin/show/{id}', [ProductController::class, 'show']);
 Route::patch('/admin/update/{id}', [ProductController::class, 'update'])->name('product.update');
 Route::post('/admin/store', [ProductController::class, 'store'])->name('product.store');
 Route::get('/book/{id}', [BookingController::class, 'book'])->name('book');
@@ -52,6 +55,7 @@ Route::get('/get-duration-vechicle/{id}', [VechicleController::class, 'checkDura
 Route::get('/admin/vechicle', [VechicleController::class, 'index'])->name('index.vechicle');
 Route::get('/admin/vechicle/create', [VechicleController::class, 'create'])->name('create.vechicle');
 Route::get('/admin/edit/vechicle/{id}', [VechicleController::class, 'edit'])->name('vechicle.edit');
+Route::delete('/admin/vechicle/delete/{id}', [VechicleController::class, 'destroy'])->name('vechicle.delete');
 Route::patch('/admin/update/vechicle/{id}', [VechicleController::class, 'update'])->name('vechicle.update');
 Route::post('/admin/vechicle/store', [VechicleController::class, 'store'])->name('vechicle.store');
 // In routes/web.php
@@ -59,9 +63,14 @@ Route::post('/admin/vechicle/store', [VechicleController::class, 'store'])->name
 Route::get('/admin/order', [OrderController::class, 'index'])->name('index.order');
 Route::get('/admin/order/edit/{id}', [OrderController::class, 'edit'])->name('edit.order');
 Route::patch('admin/order/update/{id}', [OrderController::class, 'update'])->name('update.order');
-
+Route::get('/admin/order/show/{id}', [BookingController::class, 'show'])->name('edit.show');
 Route::post('/comment/{id}/{book}', [ReviewController::class, 'store'])->name('comment.craete');
 
+Route::get('/logout', [Logout::class, 'logout'])->name('logout');
+
+Route::delete('/product/delete/{id}' , [ProductController::class, 'destroy'])->name('destroy');
+Route::delete('/book_order/delete/{id}' , [BookingController::class, 'destroy'])->name('destroy');
+Route::get('/generate-pdf', [App\Http\Controllers\PdfController::class, 'generatePdf'])->name('pdf');
 
 
 Route::get('/index', function (){

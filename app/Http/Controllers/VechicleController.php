@@ -57,8 +57,10 @@ class VechicleController extends Controller
     }
 
     
-    public function destroy(Vechicle $vechicle)
+    public function destroy(Vechicle $vechicle , string $id)
     {
-        //
+        Vechicle::find($id)->delete();
+
+        return redirect('admin/vechicle')->with('success', 'Vechicle deleted successfully.');
     }
 }

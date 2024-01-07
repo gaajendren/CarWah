@@ -1,5 +1,5 @@
 <div class="nav-bar blue">
-            <div class="container">
+            <div class="container mr-0 ml-5">
                 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
                     <a href="#" class="navbar-brand">MENU</a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -11,11 +11,12 @@
                             <a href="/dashboard" class="nav-item nav-link active">Home</a>
                             <a href="/about" class="nav-item nav-link">About</a>
                             <a href="/service" class="nav-item nav-link">Service</a>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                       
                             <a href="/booking" class="nav-item nav-link">Booking</a>
                         </div>
                         <div class="ml-auto">
-                            <a class="btn btn-custom" id="btn" href="#">Get Appointment</a>
+                            <a class="btn btn-custom" id="btn" href="{{route('service')}}">Get Appointment</a>
+                            <a href="{{route('logout')}}"><i style="color:white;" class="fa fa-sign-out ml-4"  aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </nav>

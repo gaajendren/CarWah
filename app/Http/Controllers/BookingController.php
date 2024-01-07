@@ -88,8 +88,11 @@ class BookingController extends Controller
 
    
 
-    public function show(Booking $booking)
+    public function show(Booking $booking, string $id)
     {
+        $data = Booking::find($id);
+        
+        return view('admin.book_order.show',compact ('data'));
         
     }
 
@@ -106,8 +109,10 @@ class BookingController extends Controller
     }
 
    
-    public function destroy(Booking $booking)
+    public function destroy(Booking $booking , string $id)
     {
-        
+        Booking::find($id)->delete();
+
+        return redirect('/admin/order')->with('success', 'Product deleted successfully.');
     }
 }

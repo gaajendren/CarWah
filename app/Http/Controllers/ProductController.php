@@ -39,7 +39,9 @@ class ProductController extends Controller
  
     public function show(string $id)
     {
-        //
+        $data = Product::find($id);
+        
+        return view('admin.product.show',compact ('data'));
     }
 
     
@@ -72,6 +74,8 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Product::find($id)->delete();
+
+        return redirect('admin/product')->with('success', 'Product deleted successfully.');
     }
 }

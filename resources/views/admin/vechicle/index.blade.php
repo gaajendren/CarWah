@@ -92,7 +92,13 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark  p-0"><i class="fa-solid fa-trash-can fa-sm"></i></a>
+                                            <form method="POST" action="{{ url('/admin/vechicle/delete' . '/' . $data->id) }}" style="display:inline;" accept-charset="UTF-8" >
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-datatable btn-icon btn-transparent-dark p-1" onclick="return confirm(&quot;Confirm delete?&quot;)">
+                                               <i class="fa-solid fa-trash-can fa-sm"></i>
+                                                </button>
+                                            </form>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark p-1" href="{{ url('/admin/edit/vechicle/' . $data->id) }}"><i class="fa-solid fa-pen-to-square fa-sm"></i></a>
                                            
                                                
@@ -149,7 +155,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="logout.php">Logout</a>
+                    <a class="btn btn-primary" href="{{route('logout')}}">Logout</a>
                 </div>
             </div>
         </div>

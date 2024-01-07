@@ -1,28 +1,28 @@
-<div class="top-bar">
-            <div class="container">
+<div class="top-bar" style="width:100%">
+            <div class="container ">
                 <div class="row align-items-center">
                     <div class="col-lg-4 col-md-12">
                         <div class="logo">
                             <a href="index.html">
-                                <h1>Auto<span>Wash</span></h1>
+                                <h1>Azim<span>Wash</span></h1>
                                 <!-- <img src="img/logo.jpg" alt="Logo"> -->
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-7 d-none d-lg-block">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-5">
                                 <div class="top-bar-item">
                                     <div class="top-bar-icon">
                                         <i class="far fa-clock"></i>
                                     </div>
                                     <div class="top-bar-text">
                                         <h3>Opening Hour</h3>
-                                        <p>Mon - Fri, 8:00 - 9:00</p>
+                                        <p>Mon - Fri, 9:00 a.m - 5:00 p.m</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-3">
                                 <div class="top-bar-item">
                                     <div class="top-bar-icon">
                                         <i class="fa fa-phone-alt"></i>
@@ -44,6 +44,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

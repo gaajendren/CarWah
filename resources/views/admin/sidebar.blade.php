@@ -4,7 +4,7 @@
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
     <div class="sidebar-brand-icon ">
-       <img width="50px" height="50px" style="border-radius: 50%;" src="">
+       <img width="50px" height="50px" style="border-radius: 50%;" src="/img/azim.jpeg.jpg">
     </div>
     <div class="sidebar-brand-text mx-3">Admin Portal</div>
 </a>

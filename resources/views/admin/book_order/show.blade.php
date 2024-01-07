@@ -1,5 +1,3 @@
-<?php include '../admin_sesion.php'?>
-<?php include 'controllers.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,12 +17,10 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="{{ asset ('css/sb-admin-2.min.css')}}" rel="stylesheet">
+        <link href="{{ asset ('css/sb-admin-2.min.css')}}" rel="stylesheet">
 
 <!-- Custom styles for this page -->
-<link href="{{ asset ('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+<link href="{{ asset ('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
     <style>
         .text-dark , table , body{
@@ -39,7 +35,7 @@
     <div id="wrapper">
 
      
-      <?php include '../sidebar.php' ?>
+      @include ('admin.sidebar')
         
 
         <!-- Content Wrapper -->
@@ -48,7 +44,7 @@
             <!-- Main Content -->
             <div id="content">
 
-            <?php include '../top_bar.php' ?>
+            @include ('admin.top_bar')
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -56,29 +52,26 @@
     <div class="col-xl-12">  
         <div class="card mb-4">
             <div class="card-header d-flex w-100 align-items-center justify-content-between">Product Details
-            <a href="<?php echo $list_product ?>"><button class="btn btn-primary d-flex ">Back</button></a>
+            <a href="{{route('index.order')}}"><button class="btn btn-primary d-flex ">Back</button></a>
             </div>
-                <?php $data = show($_GET['id']) ?>
+                
                 <div class="card-body">
                   
                     <div class="col-xl-10">
                               
-                                <img src="<?php echo $product_image . $data['img'] ?>" alt="Previous Image" class="" style="max-width: 200px;">
+                                
    
-                                <hr class="h-15" style="height: 5px;">
-                                <label for="">Details</label>
-                                <hr style="height: 5px;">
-                        <div class="mt-4 mb-3"><label for="exampleFormControlInput1">Product Name: <?php echo $data['prd_name'] ?></label></div>
-                        <div class="mb-3"><label for="exampleFormControlInput2">Product Price: <?php echo $data['prd_price'] ?></label></div>
-                        <div class="mb-3"><label for="exampleFormControlInput3">Quantity: <?php echo $data['prd_quantity'] ?></label></div>
-                               
-                        <div class="mb-3">
-                        <label for="exampleFormControlInput5">Resolution: <?php echo $data['brand']; ?> </label>
                     
-                        </div>
-                        <div class="mb-3"><label for="exampleFormControlInput5">Resolution: <?php echo $data['resolution'] ?></label></div>
-                        <div class="mb-3"><label for="exampleFormControlInput4">Availability: <?php echo $data['warranthy'] ?></label></div>
-                        <div class="mb-0"><label for="exampleFormControlTextarea1">Description: <?php echo $data['description'] ?></label></div>       
+                        <div class="mt-4 mb-3"><label for="exampleFormControlInput1">User Name: {{$data->fullname}}</label></div>
+                        <div class="mb-3"><label for="exampleFormControlInput2">Contact: {{$data->contact}}</label></div>
+
+<div class="mb-3"><label for="exampleFormControlInput2">Email: {{$data->email}}</label></div>
+<div class="mb-3"><label for="exampleFormControlInput2">Address: {{$data->address}}</label></div>
+
+                        <div class="mb-3"><label for="exampleFormControlInput5">Date: {{$data->date}}</label></div>
+                        <div class="mb-3"><label for="exampleFormControlInput5">Time:  {{$data->time}}  </label>   
+                            
+                  
                        
                    
                 </div>
@@ -120,11 +113,12 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-warning"  href="logout.php">Logout</a>
+                    <a class="btn btn-warning"  href="{{asset('logout')}}">Logout</a>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="{{ asset ('vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{ asset ('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
@@ -141,8 +135,9 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset ('js/demo/datatables-demo.js')}}"></script>
 
-     
     <script>
+     
+
     $(".custom-file-input").on("change", function() {
   var fileName = $(this).val().split("\\").pop();
   $(this).siblings(".custom-file-label").addClass("selected").html(fileName);

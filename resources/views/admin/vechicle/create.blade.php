@@ -55,7 +55,7 @@
     <div class="col-xl-12">  
         <div class="card mb-4">
             <div class="card-header d-flex w-100 align-items-center justify-content-between">Create Vechicle Type
-            <a href=""><button class="btn btn-primary d-flex ">Back</button></a>
+            <a href="{{ route('index.vechicle')}}"><button class="btn btn-primary d-flex ">Back</button></a>
             </div>
                 <div class="card-body">
                 <form action="{{ route('vechicle.store') }}" method="post" enctype="multipart/form-data">
@@ -114,7 +114,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="logout.php">Logout</a>
+                    <a class="btn btn-primary" href="{{route('logout')}}">Logout</a>
                 </div>
             </div>
         </div>

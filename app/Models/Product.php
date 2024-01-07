@@ -25,7 +25,7 @@ class Product extends Model
 
     public function bookings()
     {
-        return $this->hasMany(Booking::class);
+        return $this->hasMany(Booking::class, 'product_id');
     }
 
     public function vechicles()
