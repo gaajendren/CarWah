@@ -32,4 +32,6 @@ class Product extends Model
     {
         return $this->belongsTo(Vechicle::class, 'vechicle_id');
     }
+
+
 }

@@ -41,7 +41,35 @@ public function generatePdf()
         $total_sum += $booking->products->price;
     }
 
-    $rating = Review::sum('rate');
+                $bookingsByMonth = Booking::where('status', 'Settle')
+                ->with('products')
+                ->whereMonth('created_at', now()->month)
+                ->whereYear('created_at', now()->year)
+                ->get();
+
+            $bSumByMonth = 0;
+
+            foreach ($bookingsByMonth as $booking) {
+                $bSumByMonth += $booking->products->price;
+            }
+
+            // Sum of prices for bookings with 'Settle' status by week
+            $bookingsByWeek = Booking::where('status', 'Settle')
+                ->with('products')
+                ->whereBetween('created_at', [now()->startOfWeek(), now()->endOfWeek()])
+                ->get();
+
+            $bSumByWeek = 0;
+
+            foreach ($bookingsByWeek as $booking) {
+                $bSumByWeek += $booking->products->price;
+            }
+
+    $t_review = count($review);
+    $rating1 = Review::sum('rate');
+
+    $rating = $rating1 / $t_review;
+
     $t_book = count($book);
     $total_p = count($product);
 
@@ -66,7 +94,7 @@ public function generatePdf()
 
 
 
-    $pdf = SnappyPdf::loadView('admin.pdf', compact('product', 'book', 'review' ,'setOrder','rating','total_p' , 't_book' , 'total_sum' , 'bSum' ,'penOrder' ,'labels' , 'values' ));
+    $pdf = SnappyPdf::loadView('admin.pdf', compact('product', 'book', 'review' ,'setOrder','rating','total_p' , 't_book' , 'total_sum' , 'bSum' ,'penOrder' ,'labels' , 'values' , 'bSumByWeek','bSumByMonth'));
 
     return $pdf->download('report.pdf');
 }

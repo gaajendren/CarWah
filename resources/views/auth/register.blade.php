@@ -3,6 +3,7 @@
 <script src="https://kit.fontawesome.com/ff3606fe13.js" crossorigin="anonymous"></script>
 
 <!-- Main css -->
+<link href='css/app.css' rel="stylesheet">
 <link rel="stylesheet" href="css/style1.css">
 <style>
     .red{
@@ -42,7 +43,7 @@
                             
                              
                             
-                                <input  style=" width: 270px; font-family:verdana;" id="password" type="password" placeholder= "Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input  style=" width: 279px; font-family:verdana;" id="password" type="password" placeholder= "Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 <x-input-error :messages="$errors->get('password')" class="mt-2 red"  />
                            
@@ -50,11 +51,11 @@
 
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end"></label>
+                            <label for="password-confirm"></label>
 
-                            <div class="col-md-6">
-                                <input  style=" width: 270px; font-family:verdana;" id="password-confirm" type="password" placeholder= "Password Confirmation" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
+                            
+                                <input  style=" width: 279px; font-family:verdana;" id="password-confirm" type="password" placeholder= "Password Confirmation" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                          
                         </div>
                          
                        

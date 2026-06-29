@@ -41,10 +41,10 @@
             </div>
         </div>
 
-        <div class="service">
+                <div class="service">
             <div class="container">
                 <div class="section-header text-center">
-                    <p  style="color:#b4ab00;" >What We Do?</p>
+                    <p style="color:#b4ab00;">What We Do?</p>
                     <h2 style="color: #202c45;">Premium Washing Services</h2>
                 </div>
                 <div class="row">
@@ -52,56 +52,56 @@
                         <div class="service-item">
                             <i class="flaticon-car-wash-1"></i>
                             <h3>Automobile Grooming</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>Our basic package includes a shampoo hand wash of the car exterior, wheels and rims cleaning, body polish, buffing, and quick wax of the car body.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="service-item">
                             <i class="flaticon-car-wash"></i>
                             <h3>Paint Correction and Polishing</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>Enhance the appearance of your vehicle with our specialized paint correction and polishing services, giving it a flawless and glossy finish.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="service-item">
                             <i class="flaticon-vacuum-cleaner"></i>
                             <h3>Coating</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>Protect your car's exterior with our advanced coating services, providing a durable shield against environmental elements and maintaining a lasting shine.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="service-item">
                             <i class="flaticon-seat"></i>
                             <h3>Interior Fogging</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>Ensure a clean and fresh interior with our interior fogging services, eliminating odors and germs for a healthier and more comfortable driving experience.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="service-item">
                             <i class="flaticon-car-service"></i>
                             <h3>Automobile Repairing</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>Trust our skilled technicians for reliable automobile repairing services, addressing mechanical issues and ensuring your vehicle performs at its best.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="service-item">
                             <i class="flaticon-car-service-2"></i>
                             <h3>Office Carpet Cleaning</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>Enhance the cleanliness and hygiene of your office space with our professional carpet cleaning services, creating a healthier work environment.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="service-item">
                             <i class="flaticon-car-wash"></i>
                             <h3>Building Cleaning</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>Experience thorough building cleaning services, ensuring a pristine and inviting environment for occupants and visitors alike.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="service-item">
                             <i class="flaticon-brush-1"></i>
                             <h3>Relevant Upholstery and Leather Cleaning</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>Preserve the beauty of your upholstery and leather items with our specialized cleaning, leaving them looking fresh, vibrant, and well-maintained.</p>
                         </div>
                     </div>
                 </div>

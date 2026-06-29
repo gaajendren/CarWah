@@ -72,6 +72,7 @@ Route::delete('/product/delete/{id}' , [ProductController::class, 'destroy'])->n
 Route::delete('/book_order/delete/{id}' , [BookingController::class, 'destroy'])->name('destroy');
 Route::get('/generate-pdf', [App\Http\Controllers\PdfController::class, 'generatePdf'])->name('pdf');
 
+Route::get('/comment', [App\Http\Controllers\ReviewController::class, 'index'])->name('comment');
 
 Route::get('/index', function (){
     return view('index');

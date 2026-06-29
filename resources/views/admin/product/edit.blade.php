@@ -182,7 +182,7 @@
                 console.log('id:', selectedVechicle);
                 if (response == 0) {
                    
-                    $('#duration-input').html('<div class="mb-3"><label for="exampleFormControlInput4">Duration( 1 for 1 hour): </label><input class="form-control form-control-solid" id="exampleFormControlInput4" type="number" name="duration" placeholder="1" required></div>');
+                    $('#duration-input').html('<div class="mb-3"><label for="exampleFormControlInput4">Duration( 1 for 30 minute): </label><input class="form-control form-control-solid" id="exampleFormControlInput4" type="number" name="duration" placeholder="1" required></div>');
                 } else if (response == 1) {
                     
                     $('#duration-input').html('<div class="mb-3"><label for="exampleFormControlInput3">Duration Estimation: </label><input class="form-control form-control-solid" id="exampleFormControlInput3" type="text" name="duration_es" placeholder="Example 1 hour 30 minutes" required></div>');

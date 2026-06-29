@@ -2,15 +2,16 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="/public/fonts/material-design-iconic-font.min.css">
     <script src="https://kit.fontawesome.com/ff3606fe13.js" crossorigin="anonymous"></script>
     <!-- Main css -->
+    <link href='css/app.css' rel="stylesheet">
     <link rel="stylesheet" href="css/style1.css">
 </head>
 <body>
 
 
-    
+<main class="py-4">
 <!-- Sing in  Form -->
         <section class="sign-in" style="padding: 80px 30px" >
             <div class="container"style="font-family:verdana;">
@@ -26,7 +27,7 @@
                         @csrf
                             <div class="form-group">
                                 <label for="email"></label>
-                                <input style="font-family:verdana;" type="text" name="email" id="email" placeholder="Email"class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input style="font-family:verdana;" type="text" name="email" id="email" placeholder="Email"class="form-control" name="email" value="" required autocomplete="email" autofocus>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -66,7 +67,7 @@
                 </div>
             </div>
         </section>
-
+        </main>
     </div>
 
     <!-- JS -->

@@ -10,7 +10,8 @@ class ReviewController extends Controller
    
     public function index()
     {
-      
+      $product = Review::all();
+      return view('admin.review', compact('product'));
     }
 
     

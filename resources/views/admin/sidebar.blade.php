@@ -63,6 +63,12 @@
                     <span>Booking</span></a>
             </li>
 
+            
+    <li class="nav-item">
+                    <a class="nav-link" href="{{route('comment')}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Comment</span></a>
+            </li>
 
 
 

@@ -13,7 +13,7 @@ class BookingController extends Controller
     public function index()
     {
         $id = auth()->user()->id;
-        $data = Booking::where('user_id', $id)->get();
+        $data = Booking::where('user_id', $id)->latest()->get();
          $review = Review::all();
         return view('booking_list', compact('data' ,'review'));
     }
